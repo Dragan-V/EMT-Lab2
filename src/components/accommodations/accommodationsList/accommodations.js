@@ -72,7 +72,7 @@ class Accommodations extends React.Component {
     getAccommodationsPage = (offset, nextPageOffset) => {
         return this.props.accommodations.map((term, index) => {
             return (
-                <AccommodationTerm term={term} onDelete={this.props.onDelete} onEdit={this.props.onEdit} key={index} />
+                <AccommodationTerm term={term} onDelete={this.props.onDelete} onEdit={this.props.onEdit} onRent={this.props.onRent} key={index} />
 
             );
         }).filter((accommodation, index) => {

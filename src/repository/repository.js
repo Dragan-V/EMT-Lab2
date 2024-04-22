@@ -13,12 +13,15 @@ const RepositoryService ={
             })
             .catch(error => {
                 console.error("Fetch Accommodations Error:", error);
-                throw error; // Re-throw the error to propagate it to the caller
+                throw error;
             });
     },
     deleteAccommodation: (id) => {
         console.log("Delete Accommodation Service:", id);
         return instance.post(`/booking/delete-booking/${id}`);
+    },
+    rentAccommodation: (id) => {
+        return instance.post(`/booking/rent/${id}`);
     },
     addAccommodation: (name, category, host,numRooms) => {
         return instance.post("/booking/add-booking", {

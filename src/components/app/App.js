@@ -43,6 +43,13 @@ function App() {
             });
     }
 
+    const rentAccommodation = (id) => {
+        repository.rentAccommodation(id)
+            .then(() => {
+                loadAccommodations();
+            });
+    }
+
     const addAccommodation = (name, category, host, numRooms) => {
         repository.addAccommodation(name, category, host, numRooms)
             .then(() => {
@@ -73,7 +80,7 @@ function App() {
             <main>
                 <div className="container">
                     <Routes>
-                        <Route path="/accommodation" element={<Accommodations accommodations={accommodations} onDelete={deleteAccommodation} onEdit={getAccommodation} />} />
+                        <Route path="/accommodation" element={<Accommodations accommodations={accommodations} onDelete={deleteAccommodation} onEdit={getAccommodation} onRent={rentAccommodation} />} />
                         <Route path="/accommodation/edit/:id" element={<AccommodationEdit accommodation={selectedAccommodation} categories={categories} onEditAccommodation={editAccommodation} />} />
                         <Route path="/categories" element={<Categories categories={categories}/>} />
                         <Route path="/accommodation/add" element={<AccommodationAdd categories={categories} onAddAccommodation={addAccommodation} />} />

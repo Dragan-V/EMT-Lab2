@@ -19,6 +19,8 @@ const AccommodationTerm = (props) => {
                       to={`/accommodation/edit/${props.term.id}`}>
                     Edit
                 </Link>
+                <button className={"btn btn-success ml-2"} onClick={() => props.onRent(props.term.id)}>Rent</button>
+
             </td>
         </tr>
     );
